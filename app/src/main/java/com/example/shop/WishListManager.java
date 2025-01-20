@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishListManager {
-    private static List<Product> wishListItems = new ArrayList<>();
+    private static final List<Product> wishListItems = new ArrayList<>();
 
     // Add product to wish list
     public static void addToWishList(Product product) {

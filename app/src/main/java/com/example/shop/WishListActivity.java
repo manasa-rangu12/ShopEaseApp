@@ -1,5 +1,6 @@
 package com.example.shop;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +33,7 @@ public class WishListActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     protected void onResume() {
         super.onResume();

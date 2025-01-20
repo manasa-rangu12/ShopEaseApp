@@ -14,8 +14,8 @@ import java.util.List;
 
 public class CartAdapter extends BaseAdapter {
 
-    private Context context;
-    private List<Product> cartItems;
+    private final Context context;
+    private final List<Product> cartItems;
 
     public CartAdapter(Context context, List<Product> cartItems) {
         this.context = context;

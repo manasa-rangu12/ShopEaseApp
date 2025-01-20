@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity1 extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private ProductAdapter productAdapter;
     private List<Product> productList;
 
     @Override
@@ -20,7 +18,7 @@ public class MainActivity1 extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // RecyclerView setup
-        recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));  // 2 columns in the grid
 
         // Initialize product list
@@ -28,7 +26,8 @@ public class MainActivity1 extends AppCompatActivity {
         populateProductList();
 
         // Adapter with click listener
-        productAdapter = new ProductAdapter(this, productList, product -> {
+        // Handle product click: Open a new Activity
+        ProductAdapter productAdapter = new ProductAdapter(this, productList, product -> {
             // Handle product click: Open a new Activity
             Intent intent = new Intent(MainActivity1.this, ProductDetailActivity.class);
             intent.putExtra("PRODUCT_NAME", product.getName());

@@ -1,5 +1,6 @@
 package com.example.shop;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +18,9 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
-    private Context context;
-    private List<Product> productList;
-    private OnProductClickListener clickListener;
+    private final Context context;
+    private final List<Product> productList;
+    private final OnProductClickListener clickListener;
 
     // Constructor
     public ProductAdapter(Context context, List<Product> productList, OnProductClickListener clickListener) {
@@ -35,6 +36,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         return new ProductViewHolder(view);
     }
 
+    @SuppressLint({"NotifyDataSetChanged", "SetTextI18n"})
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);

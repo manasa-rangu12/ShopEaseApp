@@ -8,21 +8,18 @@ import java.util.List;
 
 public class CartActivity extends AppCompatActivity {
 
-    private ListView cartListView;
-    private CartAdapter cartAdapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        cartListView = findViewById(R.id.cartListView);
+        ListView cartListView = findViewById(R.id.cartListView);
 
         // Get the cart items
         List<Product> cartItems = CartManager.getCartItems();
 
         // Display the cart items using a custom adapter
-        cartAdapter = new CartAdapter(this, cartItems);
+        CartAdapter cartAdapter = new CartAdapter(this, cartItems);
         cartListView.setAdapter(cartAdapter);
 
         if (cartItems.isEmpty()) {
